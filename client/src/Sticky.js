@@ -27,7 +27,6 @@ class Sticky extends Component {
       method: 'delete',
       data: {stickyId}
     }).then( result => {
-      // console.log('deleted');
       this.props.liftUpdateBoard();
     });
   }
