@@ -14,14 +14,18 @@ class StickyBoard extends Component {
   componentDidUpdate() {
     axios.get(`/profile/${this.props.user._id}/sticky`)
       .then( result => {
-        this.setState({ stickies: result.data.stickies });
+        if (this.props.updateBoard) {
+          this.setState({ stickies: result.data.stickies });
+          this.props.boardUpdated();
+        }
     })
   }
 
   componentDidMount() {
     axios.get(`/profile/${this.props.user._id}/sticky`)
       .then( result => {
-        this.setState({ stickies: result.data.stickies });
+        let stickies = result.data.stickies;
+        this.setState({ stickies });
     })
   }
 
@@ -30,7 +34,7 @@ class StickyBoard extends Component {
     if (this.props.user) {
       if (this.state.stickies) {
         stickies = this.state.stickies.map( sticky => {
-          return <Sticky key={sticky._id} sticky={sticky} />
+          return <Sticky key={sticky._id} sticky={sticky} liftUpdateBoard={this.props.liftUpdateBoard} />
         });
       }
     }

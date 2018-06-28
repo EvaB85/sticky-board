@@ -13,8 +13,8 @@ class AddSticky extends Component {
     let userId = this.props.user._id
     axios.post(`/profile/${this.props.user._id}/sticky`, { newSticky, userId })
       .then(result => {
-        console.log(result.data);
         this.newSticky.value = '';
+        this.props.liftUpdateBoard();
       })
   }
 

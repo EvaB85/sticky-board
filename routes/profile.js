@@ -12,7 +12,7 @@ router.get('/:id/sticky', function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.json({stickies: stickies})
+      res.json({stickies: stickies});
     }
   });
 });
@@ -29,14 +29,31 @@ router.post('/:id/sticky', function(req, res) {
     if (err) {
       res.send(err);
     } else {
-      console.log(sticky);
       res.send(sticky);
     }
   });
 });
 
-router.put('/:id/sticky', (req, res) => {
-  console.log(req);
+router.put('/:id/sticky/:id', (req, res) => {
+  let {x, y, stickyId} = req.body;
+  Sticky.findById(stickyId, (err, sticky) => {
+    sticky.x = x;
+    sticky.y = y;
+    sticky.save((err, updatedSticky) => {
+      res.json({updatedSticky});
+    });
+  });
+});
+
+router.delete('/:id/sticky/:id', (req, res) => {
+  let stickyId = req.body.stickyId;
+  Sticky.findByIdAndRemove(stickyId, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send({ msg: 'deleted' });
+    }
+  })
 });
 
 module.exports = router;
