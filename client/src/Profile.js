@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 import AddSticky from './AddSticky';
 import StickyBoard from './StickyBoard';
 
@@ -32,9 +33,9 @@ class Profile extends Component {
     }
     let name = this.props.user ? this.props.user.name : null;
     return (
-      <div>
-        <h1>Hi {name}</h1>
-        <p>Here's your profile page</p>
+      <div className='profile'>
+        <h2>Hey {name}, </h2>
+        <p> what's stickin'?</p>
         <AddSticky user={this.props.user} liftUpdateBoard={this.liftUpdateBoard} />
         {board}
       </div>

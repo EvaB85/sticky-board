@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
+import { ResizableBox } from 'react-resizable';
 import axios from 'axios';
 import './style.css';
 
@@ -37,7 +38,7 @@ class Sticky extends Component {
         <div className='drag'>
           <div className='drag-inner'>
             <span style={styles.delete} onClick={this.deleteSticky}>&times;</span>
-            <p>{this.props.sticky.note}</p>
+            <span>{this.props.sticky.note}</span>
           </div>
         </div>
       </Draggable>

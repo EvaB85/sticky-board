@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './style.css';
 import {
   BrowserRouter as Router,
   // withRouter,
@@ -59,8 +60,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Navbar user={this.state.user} logout={this.logout} />
+        <div className='grid-main'>
+          <header>
+            <h1>Sticky Board</h1>
+            <Navbar user={this.state.user} logout={this.logout} />
+          </header>
           <Route exact path="/" render={() =>
             <HomePage user={this.state.user} />
           } />
