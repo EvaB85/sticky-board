@@ -39,22 +39,10 @@ class StickyBoard extends Component {
       }
     }
     return (
-      <div className='board' style={styles.board}>
+      <div className='board'>
         {stickies}
       </div>
     );
-  }
-}
-
-const styles = {
-  board: {
-    position: 'relative',
-    background: 'rgba(235, 210, 215, 0.7)',
-    height: '70vh',
-    width: '85vw',
-    margin: '0 auto',
-    padding: '10px',
-    boxShadow: '0 0 20px rgba(0,0,0,.4) inset'
   }
 }
 
