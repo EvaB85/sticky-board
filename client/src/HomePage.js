@@ -18,7 +18,6 @@ class HomePage extends Component {
       <div className='App'>
         <h1>This is your homepage.</h1>
         <p>bruuuuuuuuuh</p>
-        <p>Go to the <a className='green' href='/instructions'>instructions</a> page to begin.</p>
       </div>
     );
   }

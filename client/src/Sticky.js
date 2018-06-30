@@ -37,8 +37,8 @@ class Sticky extends Component {
       <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
         <div className='drag'>
           <div className='drag-inner'>
+            <span className='text' style={styles.text}>{this.props.sticky.note}</span>
             <span style={styles.delete} onClick={this.deleteSticky}>&times;</span>
-            <span className='text'>{this.props.sticky.note}</span>
           </div>
         </div>
       </Draggable>
@@ -48,11 +48,16 @@ class Sticky extends Component {
 
 const styles = {
   delete: {
+    display: 'inline-block',
     position: 'absolute',
     top: '-3px',
     right: 0,
     margin: '5px',
     cursor: 'pointer'
+  },
+  text: {
+    display: 'inline-block',
+    maxWidth: '95%'
   }
 }
 

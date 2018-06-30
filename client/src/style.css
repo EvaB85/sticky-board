@@ -1,6 +1,8 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
+  background: #02C39A;
+  color: rgb(50,50,50);
 }
 
 header {
@@ -9,7 +11,7 @@ header {
   justify-content: space-between;
   padding: 0 5em 0em 2em;
   border-bottom: 1px solid rgba(150,150,150,.2);
-  box-shadow: 0 -1em 1em rgba(120,110,20,.1) inset;
+  box-shadow: 0 -1em 1em rgba(1, 89, 70, 0.1) inset;
 }
 
 h1 {
@@ -18,11 +20,16 @@ h1 {
   font-family: 'Shrikhand', cursive;
   font-size: 3em;
   letter-spacing: .08em;
-  /* background: linear-gradient(to right, #30CFD0 0%, #330867 100%); */
-  background: linear-gradient(to right, #23493e 0%, #8be4ba 100%);
+  background: linear-gradient(to right, #52017d 0%, #905dee 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: #CFDB31;
   text-shadow: .1em .12em .15em rgba(0,50,0,.25);
+  transition: all .5s;
+}
+
+h2 span {
+  color: #6f3bd1;
 }
 
 li {
@@ -38,12 +45,31 @@ form input {
   outline: none;
 }
 
+.main-body {
+  background: #F0F3BD;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 8vw 1fr 8vw;
+  grid-template-rows: 20vh 1fr;
+}
+
+.profile-inner-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .board {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
   position: relative;
-  /* background: rgba(235, 210, 215, 0.7); */
-  background: rgba(210, 235, 226, 0.7);
-  height: 70vh;
-  width: 85vw;
+  background: rgba(137, 254, 229, 0.7);
+  min-height: 70vh;
+  min-width: 80vw;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,.4) inset;
@@ -54,6 +80,26 @@ form input {
   flex-flow: row nowrap;
   align-items: center;
   font-size: 1.3em;
+}
+
+.flexbox-nav a {
+  color: white;
+  transition: all .5s;
+}
+
+.flexbox-nav li {
+  transform-origin: bottom;
+  transition: all .5s;
+}
+
+.flexbox-nav li:hover {
+  transform: scale(1.1, 1.5);
+}
+
+.flexbox-nav a:hover {
+  color: rgb(134, 85, 226);
+  text-shadow: 0 1em .15em rgba(0,0,0,.3);
+
 }
 
 .profile h2 {
@@ -74,7 +120,6 @@ form input {
   min-height: 110px;
   min-width: 110px;
   cursor: grab;
-  /* background: lightyellow; */
   background: rgb(251, 244, 134);
   border: 1px solid rgba(0,0,0,.2);
   box-shadow: 0 5px 7px rgba(0,0,0,.2);
@@ -89,8 +134,9 @@ form input {
 .drag-inner {
   display: flex;
   justify-content: center;
+  padding-top: 8px;
 }
 
 .drag .text {
-  color: rgb(52, 23, 152);
+  color: #6f3bd1;
 }

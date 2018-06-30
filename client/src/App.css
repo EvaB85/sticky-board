@@ -14,8 +14,8 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
-  color: rgb(200, 21, 8);
+  /* text-decoration: underline;
+  color: rgb(200, 21, 8); */
 }
 li {
   margin-top: 15px;

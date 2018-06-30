@@ -34,9 +34,13 @@ class Profile extends Component {
     let name = this.props.user ? this.props.user.name : null;
     return (
       <div className='profile'>
-        <h2>Hey {name}, </h2>
-        <p> what's stickin'?</p>
-        <AddSticky user={this.props.user} liftUpdateBoard={this.liftUpdateBoard} />
+        <div className='profile-inner-wrapper'>
+          <div>
+            <h2>Hey <span>{name}</span>, </h2>
+            <p> what's stickin'?</p>
+          </div>
+          <AddSticky user={this.props.user} liftUpdateBoard={this.liftUpdateBoard} />
+        </div>
         {board}
       </div>
     );
