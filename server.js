@@ -30,41 +30,23 @@ app.use(function(req, res, next) {
   next();
 });
 
-// for heroku deployment
-app.get('*', function(req, res, next) {
-	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
 ////PACKAGE.JSON ITEM: "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
 ////PACKAGE.JSON ITEM: PORT=3001 - for non-heroku build
-
-// catch 404 and forward to error handler - commented out
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-//
-// // error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-//
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
 
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/profile', profile);
-
 
 // for local
 //     "start": "nodemon server.js"
 
 // add this under client package.json scripts for local running
 //   "proxy": "http://localhost:3001"
+
+// for heroku deployment
+app.get('*', function(req, res, next) {
+	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

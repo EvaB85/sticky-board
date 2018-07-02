@@ -76,23 +76,4 @@ router.post('/validate', (req, res) => {
   }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
