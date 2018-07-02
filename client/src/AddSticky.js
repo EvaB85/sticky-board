@@ -20,11 +20,11 @@ class AddSticky extends Component {
 
   render() {
     return (
-      <div>
-        <form id='signup-form' onSubmit={this.handleSubmit}>
+      <div id='add-sticky-wrapper'>
+        <form id='add-sticky-form' onSubmit={this.handleSubmit}>
           <label htmlFor='new-sticky'>Add Sticky</label>
           <input id='new-sticky' type='text' ref={ input => {this.newSticky = input}} required />
-          <button type='submit' style={styles.button}>Add Sticky</button>
+          <button type='submit' style={styles.button}><i class="fas fa-plus-circle"></i></button>
         </form>
       </div>
     );

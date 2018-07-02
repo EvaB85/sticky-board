@@ -35,7 +35,7 @@ class Profile extends Component {
     return (
       <div className='profile'>
         <div className='profile-inner-wrapper'>
-          <div>
+          <div className='hey-wrapper'>
             <h2>Hey <span>{name}</span>, </h2>
             <p> what's stickin'?</p>
           </div>

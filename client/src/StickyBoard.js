@@ -39,8 +39,10 @@ class StickyBoard extends Component {
       }
     }
     return (
-      <div className='board'>
-        {stickies}
+      <div className='board-wrapper'>
+        <div className='board'>
+          {stickies}
+        </div>
       </div>
     );
   }
