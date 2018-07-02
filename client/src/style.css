@@ -68,7 +68,6 @@ form input {
 .profile-inner-wrapper {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  max-width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -236,13 +235,13 @@ form input {
 
   .profile {
     grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: auto;
   }
 
   .profile-inner-wrapper  {
     flex-flow: column wrap;
     justify-content: flex-end;
     align-items: baseline;
-    max-width: 100vw;
   }
 
   #add-sticky-wrapper {
