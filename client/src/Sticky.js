@@ -11,10 +11,6 @@ class Sticky extends Component {
   }
 
   handleStop(e, el) {
-    console.log('here is e: ', e);
-    if (e.type === 'touchmove') {
-      e.preventDefault();
-    }
     let userId = this.props.sticky.userId;
     let stickyId = this.props.sticky._id
     let x = el.x;
@@ -38,7 +34,12 @@ class Sticky extends Component {
 
   render() {
     return (
-      <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
+      <Draggable
+        onStop={this.handleStop}
+        bounds='parent'
+        defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}
+        onTouchStart={e => e.preventDefault()}
+      >
         <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
