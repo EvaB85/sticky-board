@@ -11,6 +11,7 @@ class Sticky extends Component {
   }
 
   handleStop(e, el) {
+    console.log('here is e: ', e);
     let userId = this.props.sticky.userId;
     let stickyId = this.props.sticky._id
     let x = el.x;
