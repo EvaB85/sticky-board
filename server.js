@@ -59,10 +59,12 @@ app.use('/', index);
 app.use('/auth', auth);
 app.use('/profile', profile);
 
-// for Heroku
-//     "start": "PORT=3001 node ./bin/www"
+
 // for local
 //     "start": "nodemon server.js"
+
+// add this under client package.json scripts for local running
+//   "proxy": "http://localhost:3001"
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
