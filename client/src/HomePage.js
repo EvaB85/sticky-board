@@ -17,7 +17,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>This is your homepage.</h1>
+        <h1>Sample homepage</h1>
+        <p>Go to profile in top right to use</p>
       </div>
     );
   }
