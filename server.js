@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 
 //FOR MONGOOSE
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/sticky_board', { useMongoClient: true }); //commented out for heroku // "boilerplate" will be name of db
-// mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});  // for heroku deployment
+// mongoose.connect('mongodb://localhost/sticky_board', { useMongoClient: true }); // for local dev
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true});  // for heroku deployment
 
 var index = require('./routes/index');
 var auth = require('./routes/auth');
