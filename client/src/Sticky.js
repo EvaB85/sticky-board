@@ -10,15 +10,23 @@ class Sticky extends Component {
   }
 
   handleStop(e, el) {
-    console.log(this);
+    console.log('heres this: ', this);
+    // used for local build
     // let userId = this.children._self.props.sticky.userId;
     // let stickyId = this.children._self.props.sticky._id
-    // let x = el.x;
-    // let y = el.y;
-    // console.log('here is userId: ', userId);
-    // console.log('here is stickyId: ', stickyId);
-    // console.log('here is x: ', x);
-    // console.log('here is y: ', y);
+    //
+
+    // used for heroku build
+    let userId = this.children._owner.memoizedProps.sticky.userId;
+    let stickyId = this.children._owner.memoizedProps.sticky._id
+    //
+    
+    let x = el.x;
+    let y = el.y;
+    console.log('here is userId: ', userId);
+    console.log('here is stickyId: ', stickyId);
+    console.log('here is x: ', x);
+    console.log('here is y: ', y);
     // axios.put(`/profile/${userId}/sticky/${stickyId}`, { x, y, stickyId })
     //   .then( result => {
     //     // console.log(result.data);
