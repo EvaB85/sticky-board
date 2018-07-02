@@ -68,7 +68,9 @@ form input {
 .profile-inner-wrapper {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
+  max-width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
