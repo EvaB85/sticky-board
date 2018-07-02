@@ -28,9 +28,7 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-  console.log('heres req.body: ', req.body);
   User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
-    console.log('inside User.findOne and heres user: ', user);
     if (user) {
       res.redirect('/auth/signup')
     } else {

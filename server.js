@@ -21,8 +21,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public'))); //commented out for heroku
-app.use(express.static(path.resolve(__dirname, 'client', 'build'))); //for heroku deployment
+// app.use(express.static(path.join(__dirname, 'public'))); // for local dev
+app.use(express.static(path.resolve(__dirname, 'client', 'build'))); // for heroku deployment
 
 app.use(function(req, res, next) {
   // before every route, attach the flash messages and current user to res.locals
