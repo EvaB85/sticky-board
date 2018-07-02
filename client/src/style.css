@@ -1,7 +1,8 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background: linear-gradient(to top, #30011E 0%, #6c0143 100%);
+  /* background: linear-gradient(to top, #30011E 0%, #6c0143 100%); */
+  background: #f7f6cb;
   color: #B68F40;
 }
 
@@ -10,9 +11,11 @@ header {
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 0 5em 0em 2em;
-  background: linear-gradient(to bottom right, #02C39A 0%, #bbb3fc 80%);
+  /* background: linear-gradient(to bottom right, #02C39A 0%, #bbb3fc 80%); */
+  background: linear-gradient(to bottom right, #E8E6DF 0%, #484B52 100%);
+  /* background: #E8E6DF; */
   border-bottom: 1px solid rgba(150,150,150,.2);
-  box-shadow: 0 -1em 1em rgba(1, 89, 70, 0.1) inset;
+  /* box-shadow: 0 -1em 1em rgba(1, 89, 70, 0.1) inset; */
 }
 
 h1 {
@@ -21,11 +24,12 @@ h1 {
   font-family: 'Shrikhand', cursive;
   font-size: 3em;
   letter-spacing: .08em;
-  background: linear-gradient(to right, #52017d 0%, #905dee 100%);
+  /* background: linear-gradient(to right, #52017d 0%, #905dee 100%); */
+  background: linear-gradient(to right, #1b277c 0%, #3f6bc2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #CFDB31;
-  text-shadow: .1em .12em .15em rgba(0,50,0,.25);
+  /* text-shadow: .1em .12em .15em rgba(0,50,0,.25); */
   transition: all .5s;
 }
 
