@@ -19,8 +19,6 @@ router.get('/:id/sticky', function(req, res) {
 
 // POSTS a new sticky to a user
 router.post('/:id/sticky', function(req, res) {
-  console.log('in POST profile/:id/sticky');
-  console.log('heres req.body: ', req.body);
   let { newSticky, userId } = req.body;
   Sticky.create({
     userId: userId,
@@ -29,7 +27,6 @@ router.post('/:id/sticky', function(req, res) {
     y: 0
   }, function(err, sticky) {
     if (err) {
-      console.log('in POST profile/:id/sticky err');
       res.send(err);
     } else {
       res.send(sticky);
@@ -38,12 +35,8 @@ router.post('/:id/sticky', function(req, res) {
 });
 
 router.put('/:uId/sticky/:i\sId', (req, res) => {
-  console.log('in PUT profile/:uid/sticky/sid');
-  console.log('heres req.body: ', req.body);
   let {x, y, stickyId} = req.body;
   Sticky.findById(stickyId, (err, sticky) => {
-    console.log('inside PUT profile/uid/sticky/sid inside Sticky.findById');
-    console.log('heres sticky: ', sticky);
     sticky.x = x;
     sticky.y = y;
     sticky.save((err, updatedSticky) => {
