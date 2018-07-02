@@ -13,8 +13,6 @@ class Sticky extends Component {
   handleStop(e, el) {
     let userId = this.props.sticky.userId;
     let stickyId = this.props.sticky._id
-
-    console.log(el);
     let x = el.x;
     let y = el.y;
     axios.put(`/profile/${userId}/sticky/${stickyId}`, { x, y, stickyId })

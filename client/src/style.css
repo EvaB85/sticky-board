@@ -242,6 +242,7 @@ form input {
     flex-flow: column wrap;
     justify-content: flex-end;
     align-items: baseline;
+    max-width: 100vw;
   }
 
   #add-sticky-wrapper {
