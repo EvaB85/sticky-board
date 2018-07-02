@@ -38,7 +38,7 @@ class Sticky extends Component {
         <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
-            <span style={styles.delete} onClick={this.deleteSticky}>&times;</span>
+            <span className='sticky-x' style={styles.delete} onClick={this.deleteSticky}>&times;</span>
           </div>
         </div>
       </Draggable>

@@ -60,7 +60,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className='body-wrapper'>
           <header>
             <h1>Sticky Board</h1>
             <Navbar user={this.state.user} logout={this.logout} />
