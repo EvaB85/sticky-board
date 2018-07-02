@@ -11,14 +11,8 @@ class Sticky extends Component {
   }
 
   handleStop(e, el) {
-    console.log('heres this: ', this);
-    // used for local build
-    // let userId = this.children._self.props.sticky.userId;
-    // let stickyId = this.children._self.props.sticky._id
-
-    // used for heroku build
-    let userId = this.children._owner.memoizedProps.sticky.userId;
-    let stickyId = this.children._owner.memoizedProps.sticky._id
+    let userId = this.props.sticky.userId;
+    let stickyId = this.props.sticky._id
 
     console.log(el);
     let x = el.x;
