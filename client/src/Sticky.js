@@ -14,10 +14,14 @@ class Sticky extends Component {
     let stickyId = this.children._self.props.sticky._id
     let x = el.x;
     let y = el.y;
-    axios.put(`/profile/${userId}/sticky/${stickyId}`, { x, y, stickyId })
-      .then( result => {
-        // console.log(result.data);
-    });
+    console.log('here is userId: ', userId);
+    console.log('here is stickyId: ', stickyId);
+    console.log('here is x: ', x);
+    console.log('here is y: ', y);
+    // axios.put(`/profile/${userId}/sticky/${stickyId}`, { x, y, stickyId })
+    //   .then( result => {
+    //     // console.log(result.data);
+    // });
   }
 
   deleteSticky() {
@@ -33,8 +37,8 @@ class Sticky extends Component {
 
   render() {
     return (
-      // <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
-      <Draggable bounds='parent' defaultPosition={ {x:this.props.sticky.x, y:this.props.sticky.y} }>
+      <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
+      // <Draggable bounds='parent' defaultPosition={ {x:this.props.sticky.x, y:this.props.sticky.y} }>
         <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
