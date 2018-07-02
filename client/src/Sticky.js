@@ -7,9 +7,11 @@ class Sticky extends Component {
   constructor(props) {
     super(props)
     this.deleteSticky = this.deleteSticky.bind(this);
+    this.handleStop = this.handleStop.bind(this);
   }
 
   handleStop(e, el) {
+    console.log('heres this: ', this);
     // used for local build
     // let userId = this.children._self.props.sticky.userId;
     // let stickyId = this.children._self.props.sticky._id
@@ -17,7 +19,7 @@ class Sticky extends Component {
     // used for heroku build
     let userId = this.children._owner.memoizedProps.sticky.userId;
     let stickyId = this.children._owner.memoizedProps.sticky._id
-  
+
     console.log(el);
     let x = el.x;
     let y = el.y;
@@ -41,7 +43,6 @@ class Sticky extends Component {
   render() {
     return (
       <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
-      {/* <Draggable bounds='parent' defaultPosition={ {x:this.props.sticky.x, y:this.props.sticky.y} }> */}
         <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
