@@ -18,7 +18,6 @@ class HomePage extends Component {
     return (
       <div className='App'>
         <h1>This is your homepage.</h1>
-        <p>bruuuuuuuuuh</p>
       </div>
     );
   }
