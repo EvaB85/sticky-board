@@ -44,15 +44,13 @@ class Sticky extends Component {
 
   render() {
     return (
-      <Draggable
-        onStop={this.handleStop}
-        bounds='parent'
-        defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}
-        onScroll={this.preventTouchScroll}
-        onTouchStart={this.preventTouchScroll}
-        onTouchMove={this.preventTouchScroll}
-      >
-        <div className='drag'>
+      <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
+        <div
+          className='drag'
+          onScroll={this.preventTouchScroll}
+          onTouchStart={this.preventTouchScroll}
+          onTouchMove={this.preventTouchScroll}
+        >
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
             <span className='sticky-x' style={styles.delete} onClick={this.deleteSticky}>&times;</span>
