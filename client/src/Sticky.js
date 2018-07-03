@@ -43,9 +43,8 @@ class Sticky extends Component {
         onStop={this.handleStop}
         bounds='parent'
         defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}
-        onTouchMove={this.preventTouchScroll}
       >
-        <div className='drag'>
+        <div className='drag' onTouchMove={this.preventTouchScroll}>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
             <span className='sticky-x' style={styles.delete} onClick={this.deleteSticky}>&times;</span>
