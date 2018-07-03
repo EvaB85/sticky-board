@@ -6,11 +6,9 @@ import './style.css';
 class Sticky extends Component {
   constructor(props) {
     super(props)
-    this.deleteSticky = this.deleteSticky.bind(this);
-    this.handleStop = this.handleStop.bind(this);
   }
 
-  handleStop(e, el) {
+  handleStop = (e, el) => {
     let userId = this.props.sticky.userId;
     let stickyId = this.props.sticky._id
     let x = el.x;
@@ -21,7 +19,7 @@ class Sticky extends Component {
     });
   }
 
-  deleteSticky() {
+  deleteSticky = () => {
     let stickyId = this.props.sticky._id;
     axios({
       url: `/profile/${this.props.sticky.userId}/sticky/${stickyId}`,
