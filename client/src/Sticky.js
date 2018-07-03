@@ -8,6 +8,7 @@ class Sticky extends Component {
     super(props)
     this.deleteSticky = this.deleteSticky.bind(this);
     this.handleStop = this.handleStop.bind(this);
+    this.preventTouchScroll = this.preventTouchScroll.bind(this);
   }
 
   handleStop(e, el) {
@@ -32,10 +33,19 @@ class Sticky extends Component {
     });
   }
 
+  preventTouchScroll(e) {
+    console.log('in prevent touch scroll');
+    console.log('heres e: ', e);
+    if (e.type === 'touchmove') {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+
   render() {
     return (
       <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
-        <div>
+        <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
             <span className='sticky-x' style={styles.delete} onClick={this.deleteSticky}>&times;</span>
