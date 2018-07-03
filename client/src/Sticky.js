@@ -32,13 +32,18 @@ class Sticky extends Component {
     });
   }
 
+  preventTouchScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   render() {
     return (
       <Draggable
         onStop={this.handleStop}
         bounds='parent'
         defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}
-        onTouchStart={e => e.preventDefault()}
+        onTouchMove={this.preventTouchScroll}
       >
         <div className='drag'>
           <div className='drag-inner'>
