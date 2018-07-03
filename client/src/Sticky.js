@@ -6,6 +6,8 @@ import './style.css';
 class Sticky extends Component {
   constructor(props) {
     super(props)
+    this.deleteSticky = this.deleteSticky.bind(this);
+    this.handleStop = this.handleStop.bind(this);
   }
 
   handleStop(e, el) {
@@ -32,11 +34,11 @@ class Sticky extends Component {
 
   render() {
     return (
-      <Draggable onStop={() => this.handleStop()} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
+      <Draggable onStop={this.handleStop} bounds='parent' defaultPosition={{x:this.props.sticky.x, y:this.props.sticky.y}}>
         <div className='drag'>
           <div className='drag-inner'>
             <span className='text' style={styles.text}>{this.props.sticky.note}</span>
-            <span className='sticky-x' style={styles.delete} onClick={() => this.deleteSticky()}>&times;</span>
+            <span className='sticky-x' style={styles.delete} onClick={this.deleteSticky}>&times;</span>
           </div>
         </div>
       </Draggable>
