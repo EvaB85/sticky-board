@@ -36,7 +36,7 @@ class Sticky extends Component {
   preventTouchScroll(e) {
     console.log('in prevent touch scroll');
     console.log('heres e: ', e);
-    if (e.type === 'touchstart') {
+    if (e.type === 'touchmove') {
       e.preventDefault();
       e.stopPropagation();
     }
