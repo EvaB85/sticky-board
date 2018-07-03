@@ -8,6 +8,7 @@ class Sticky extends Component {
     super(props)
     this.deleteSticky = this.deleteSticky.bind(this);
     this.handleStop = this.handleStop.bind(this);
+    this.preventTouchScroll = this.preventTouchScroll.bind(this);
   }
 
   handleStop(e, el) {
@@ -33,6 +34,7 @@ class Sticky extends Component {
   }
 
   preventTouchScroll(e) {
+    console.log('in prevent touch scroll');
     e.preventDefault();
     e.stopPropagation();
   }
