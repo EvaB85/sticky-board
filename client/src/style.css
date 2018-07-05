@@ -55,8 +55,21 @@ form input {
   outline: none;
 }
 
+footer {
+  flex: 0 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .body-wrapper {
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to bottom, rgba(52, 211, 238, 0.5) 0%, rgba(124, 235, 254, 0.2) 100%);
+}
+
+.flex-body {
+  flex: 1 0 auto;
 }
 
 .profile {

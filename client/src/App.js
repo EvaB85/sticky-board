@@ -61,24 +61,29 @@ class App extends Component {
     return (
       <Router>
         <div className='body-wrapper'>
-          <header>
-            <h1>Sticky Board</h1>
-            <Navbar user={this.state.user} logout={this.logout} />
-          </header>
-          <section className='main-body'>
-            <Route exact path="/" render={() =>
-              <HomePage user={this.state.user} />
-            } />
-            <Route path='/profile/:id' render={() =>
-              <Profile user={this.state.user} />
-            } />
-            <Route path='/signup' render={() =>
-              <Signup liftAuth={this.liftAuth} />
-            } />
-            <Route path='/login' render={() =>
-              <Login liftAuth={this.liftAuth} />
-            } />
-          </section>
+          <div className='flex-body'>
+            <header>
+              <h1>Sticky Board</h1>
+              <Navbar user={this.state.user} logout={this.logout} />
+            </header>
+            <section className='main-body'>
+              <Route exact path="/" render={() =>
+                <HomePage user={this.state.user} />
+              } />
+              <Route path='/profile/:id' render={() =>
+                <Profile user={this.state.user} />
+              } />
+              <Route path='/signup' render={() =>
+                <Signup liftAuth={this.liftAuth} />
+              } />
+              <Route path='/login' render={() =>
+                <Login liftAuth={this.liftAuth} />
+              } />
+            </section>
+          </div>
+          <footer>
+            <p>Scott Rosehart | © 2018</p>
+          </footer>
         </div>
       </Router>
     );
